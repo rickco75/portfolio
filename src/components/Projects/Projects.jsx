@@ -26,6 +26,50 @@ const Projects = () => {
     <section id="projects">
       <Container>
         <div className="project-wrapper">
+          <Title title="Skills" />
+          <Row>
+            <Col lg={12} sm={12}>
+              <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
+                <div className="project-wrapper__text">
+                  <div>
+                    <p>
+                      <ul>
+                        <li>
+                          Experience with multiple front and back end JavaScript frameworks
+                          including but not limited to NodeJS (express), React and Angular using
+                          Typescript.
+                        </li>
+                        <li>
+                          Experience with GraphQL and Apollo Server (including subscriptions using
+                          web sockets).
+                        </li>
+                        <li>
+                          Proficient with multiple relational database systems including MSSQL,
+                          MySQL, Postgres, MariaDB. I am also familiar with NoSQL Databases such as
+                          MongoDB (including Aggregation Pipeline) and Firebase.
+                        </li>
+                        <li>
+                          Experience with SSRS, ad-hoc queries, transactional sql, stored
+                          procedures, functions and triggers as well as designing database schemas
+                          from the ground up.
+                        </li>
+                        <li>Experience with C# / dotnet</li>
+                        <li>Experience with UI frameworks such as Material, Bootstrap, Chakra.</li>
+                        <li>Familiar with Agile project management such as Scrum and Kanban.</li>
+                        <li>
+                          Utilize source control (Github, Gitbucket) for continuous integration / deployment
+                        </li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </Fade>
+            </Col>
+          </Row>
+        </div>
+      </Container>
+      <Container>
+        <div className="project-wrapper">
           <Title title="Projects" />
           {projects.map((project) => {
             const { title, info, info2, url, repo, img, id } = project;
