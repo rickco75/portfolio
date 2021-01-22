@@ -35,6 +35,15 @@ export const projectsData = [
     url: 'https://wonderful-heisenberg-397e19.netlify.app/',
     repo: 'https://github.com/rickco75/merng-client', // if no repo, the button will not show up
   },
+  {
+    id: nanoid(),
+    img: 'redditclone.jpg',
+    title: 'Reddit Clone',
+    info: 'uses postgres sql, Redis, graphql, apollo client, NextJS, Chakra UI, Typescript. Apollo Server Deployed using Dokku Container',
+    info2: '',
+    url: 'https://web.rick-cohen.com/',
+    repo: 'https://github.com/rickco75/redditclone', // if no repo, the button will not show up
+  },  
   // {
   //   id: nanoid(),
   //   img: 'project.jpg',
