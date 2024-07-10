@@ -30,8 +30,17 @@ const Projects = () => {
     listStyleType: 'disc',
   };
 
-  const descriptionStyle = {
-    marginBottom: '20px',
+  const descriptionRowStyle = (index) => ({
+    backgroundColor: index % 2 === 0 ? '#f9f9f9' : '#ffffff',
+    padding: '10px 20px',
+    marginBottom: '10px',
+    borderRadius: '5px',
+  });
+
+  const descriptionTextStyle = {
+    fontSize: '16px',
+    lineHeight: '1.6',
+    color: '#333',
   };
 
   return (
@@ -68,85 +77,35 @@ const Projects = () => {
                       <li>Docker</li>
                     </ul>
                   </div>
-                  <div style={descriptionStyle}>
-                    <Row>
-                      <Col md={6}>
-                        <p>Extensive experience with large and complex distributed architectures.</p>
-                      </Col>
-                      <Col md={6}>
-                        <p>Managed multiple microservices and used Apollo Federation.</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={6}>
-                        <p>Created dashboards with New Relic and wrote unit tests with Mocha.</p>
-                      </Col>
-                      <Col md={6}>
-                        <p>Wrote E2E tests using Cypress for front-end applications.</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={6}>
-                        <p>Actively participated in daily standup meetings and sprint planning.</p>
-                      </Col>
-                      <Col md={6}>
-                        <p>Optimized GraphQL queries and mutations for lowest possible latency.</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={6}>
-                        <p>Performed load testing using K6 and created detailed documentation in Confluence.</p>
-                      </Col>
-                      <Col md={6}>
-                        <p>Worked with Kafka as a message broker between microservices.</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={6}>
-                        <p>Utilized multiple databases including MongoDB, MS SQL Server, and Postgres.</p>
-                      </Col>
-                      <Col md={6}>
-                        <p>Implemented serverless functionality with AWS Amplify, AppSync, DynamoDB, Cognito, and Lambdas.</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={6}>
-                        <p>Developed and maintained a GraphQL API using Node.js and Apollo Server.</p>
-                      </Col>
-                      <Col md={6}>
-                        <p>Managed PostgreSQL databases and implemented Role-Based Access Control (RBAC).</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={6}>
-                        <p>Integrated frontend with PostgreSQL database through GraphQL API.</p>
-                      </Col>
-                      <Col md={6}>
-                        <p>Developed and maintained microservice architecture focusing on modularity and scalability.</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={6}>
-                        <p>Influenced numerous students through teaching and mentorship at Woz-U.</p>
-                      </Col>
-                      <Col md={6}>
-                        <p>Managed significant MSSQL databases and migrated legacy applications to React.</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={6}>
-                        <p>Crafted dynamic live dashboards and automated various processes.</p>
-                      </Col>
-                      <Col md={6}>
-                        <p>Optimized databases and participated in weekly agile team meetings.</p>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md={6}>
-                        <p>Created comprehensive documentation for various applications.</p>
-                      </Col>
-                    </Row>
-                  </div>
+                  {[
+                    'Extensive experience with large and complex distributed architectures.',
+                    'Managed multiple microservices and used Apollo Federation.',
+                    'Created dashboards with New Relic and wrote unit tests with Mocha.',
+                    'Wrote E2E tests using Cypress for front-end applications.',
+                    'Actively participated in daily standup meetings and sprint planning.',
+                    'Optimized GraphQL queries and mutations for lowest possible latency.',
+                    'Performed load testing using K6 and created detailed documentation in Confluence.',
+                    'Worked with Kafka as a message broker between microservices.',
+                    'Utilized multiple databases including MongoDB, MS SQL Server, and Postgres.',
+                    'Implemented serverless functionality with AWS Amplify, AppSync, DynamoDB, Cognito, and Lambdas.',
+                    'Developed and maintained a GraphQL API using Node.js and Apollo Server.',
+                    'Managed PostgreSQL databases and implemented Role-Based Access Control (RBAC).',
+                    'Integrated frontend with PostgreSQL database through GraphQL API.',
+                    'Developed and maintained microservice architecture focusing on modularity and scalability.',
+                    'Influenced numerous students through teaching and mentorship at Woz-U.',
+                    'Managed significant MSSQL databases and migrated legacy applications to React.',
+                    'Crafted dynamic live dashboards and automated various processes.',
+                    'Optimized databases and participated in weekly agile team meetings.',
+                    'Created comprehensive documentation for various applications.'
+                  ].map((description, index) => (
+                    <Fade key={index} left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
+                      <Row style={descriptionRowStyle(index)}>
+                        <Col>
+                          <p style={descriptionTextStyle}>{description}</p>
+                        </Col>
+                      </Row>
+                    </Fade>
+                  ))}
                 </div>
               </Fade>
             </Col>
