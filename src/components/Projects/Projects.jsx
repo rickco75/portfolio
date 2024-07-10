@@ -31,10 +31,11 @@ const Projects = () => {
   };
 
   const descriptionRowStyle = (index) => ({
-    backgroundColor: index % 2 === 0 ? '#f9f9f9' : '#ffffff',
+    backgroundColor: index % 2 === 0 ? '#e6f7ff' : '#fff3e6',  // Vibrant alternating colors
     padding: '10px 20px',
     marginBottom: '10px',
     borderRadius: '5px',
+    border: '1px solid #d9d9d9',
   });
 
   const descriptionTextStyle = {
@@ -78,10 +79,10 @@ const Projects = () => {
                     </ul>
                   </div>
                   {[
-                    'Manged various teams of developers and led daily standups.',
+                    'Managed various teams of developers and led daily standups.',
                     'Ensured excellent code quality avoiding tech debt.',
                     'Utilized SCRUM and other agile project management.',
-                    'Maintained excellent communication between all teams and stakeholders',
+                    'Maintained excellent communication between all teams and stakeholders.',
                     'Extensive experience with large and complex distributed architectures.',
                     'Managed multiple microservices and used Apollo Federation.',
                     'Created dashboards with New Relic and wrote unit tests with Mocha.',
@@ -100,7 +101,7 @@ const Projects = () => {
                     'Managed significant MSSQL databases and migrated legacy applications to React.',
                     'Crafted dynamic live dashboards and automated various processes.',
                     'Optimized databases and participated in weekly agile team meetings.',
-                    'Created comprehensive documentation for all aspects of the Software Development Lifecycle and company architecture.'
+                    'Created comprehensive documentation for all aspects of the Software Development Lifecycle and company architecture.',
                   ].map((description, index) => (
                     <Fade key={index} left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
                       <Row style={descriptionRowStyle(index)}>
