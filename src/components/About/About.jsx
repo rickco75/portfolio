@@ -8,7 +8,7 @@ import ResumePDF from '../../media/RichardCohenResume.pdf';
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
-  const { img, paragraphOne, resume } = about;
+  const { img, resume } = about;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -39,9 +39,8 @@ const About = () => {
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
               <div className="about-wrapper__info">
                 <p className="about-wrapper__info-text">
-                  {paragraphOne ||
-                    'I am a detail-oriented, reliable and trustworthy individual with a systematic approach to problem-solving and ability to work in a team environment, I’m seeking to advance my career as a software engineer where I can contribute my experience, education, and leadership.'}
-                </p>               
+                  Experienced Full-Stack Developer well-versed in API's, JavaScript, React, GraphQL, Node.js, and diverse databases, demonstrating a track record in software engineering and project management. Proficient in transforming intricate requirements into practical solutions, amplifying system performance, and elevating user experience. With a keen problem-solving aptitude and adaptability in collaborative team settings, I am committed to furthering my career as a software engineer. My aim is to meld my extensive expertise, robust educational background, leadership acumen, and a desire to lead and remain flexible within an innovative team. This is driven by my ambition to create a collaborative environment that fosters collective success.
+                </p>
                 {resume && (
                   <span className="d-flex mt-3">
                     <a

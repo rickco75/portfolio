@@ -1,14 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Fade from 'react-reveal/Fade';
-import Tilt from 'react-tilt';
 import { Container, Row, Col } from 'react-bootstrap';
-import PortfolioContext from '../../context/context';
 import Title from '../Title/Title';
-import ProjectImg from '../Image/ProjectImg';
 
 const Projects = () => {
-  const { projects } = useContext(PortfolioContext);
-
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -34,31 +29,50 @@ const Projects = () => {
                   <div>
                     <p>
                       <ul>
-                        <li>
-                          Experience with multiple front and back end JavaScript frameworks
-                          including but not limited to NodeJS (express), React and Angular using
-                          Typescript.
-                        </li>
-                        <li>
-                          Experience with GraphQL and Apollo Server (including subscriptions using
-                          web sockets).
-                        </li>
-                        <li>
-                          Proficient with multiple relational database systems including MSSQL,
-                          MySQL, Postgres, MariaDB. I am also familiar with NoSQL Databases such as
-                          MongoDB (including Aggregation Pipeline) and Firebase.
-                        </li>
-                        <li>
-                          Experience with SSRS, ad-hoc queries, transactional sql, stored
-                          procedures, functions and triggers as well as designing database schemas
-                          from the ground up.
-                        </li>
-                        <li>Experience with C# / dotnet</li>
-                        <li>Experience with UI frameworks such as Material, Bootstrap, Chakra.</li>
-                        <li>Familiar with Agile project management such as Scrum and Kanban.</li>
-                        <li>
-                          Utilize source control (Github, Gitbucket) for continuous integration / deployment
-                        </li>
+                        <li>TypeScript</li>
+                        <li>Node.js</li>
+                        <li>React</li>
+                        <li>GraphQL</li>
+                        <li>MS SQL</li>
+                        <li>Postgres</li>
+                        <li>MongoDB</li>
+                        <li>HTML & CSS</li>
+                        <li>SQLite</li>
+                        <li>DynamoDB</li>
+                        <li>MySQL</li>
+                        <li>AWS - Amplify, AppSync</li>
+                        <li>Wrike</li>
+                        <li>Git, GitLab</li>
+                        <li>Visual Studio Code</li>
+                        <li>Agile Project Management</li>
+                        <li>ORM - Objection, Prisma, TypeORM</li>
+                        <li>Mocha, Jest, Cypress</li>
+                        <li>New Relic</li>
+                        <li>Apollo Server, Apollo Federation</li>
+                        <li>Docker</li>
+                      </ul>
+                    </p>
+                    <p>
+                      <ul>
+                        <li>Extensive experience with large and complex distributed architectures.</li>
+                        <li>Managed multiple microservices and used Apollo Federation.</li>
+                        <li>Created dashboards with New Relic and wrote unit tests with Mocha.</li>
+                        <li>Wrote E2E tests using Cypress for front-end applications.</li>
+                        <li>Actively participated in daily standup meetings and sprint planning.</li>
+                        <li>Optimized GraphQL queries and mutations for lowest possible latency.</li>
+                        <li>Performed load testing using K6 and created detailed documentation in Confluence.</li>
+                        <li>Worked with Kafka as a message broker between microservices.</li>
+                        <li>Utilized multiple databases including MongoDB, MS SQL Server, and Postgres.</li>
+                        <li>Implemented serverless functionality with AWS Amplify, AppSync, DynamoDB, Cognito, and Lambdas.</li>
+                        <li>Developed and maintained a GraphQL API using Node.js and Apollo Server.</li>
+                        <li>Managed PostgreSQL databases and implemented Role-Based Access Control (RBAC).</li>
+                        <li>Integrated frontend with PostgreSQL database through GraphQL API.</li>
+                        <li>Developed and maintained microservice architecture focusing on modularity and scalability.</li>
+                        <li>Influenced numerous students through teaching and mentorship at Woz-U.</li>
+                        <li>Managed significant MSSQL databases and migrated legacy applications to React.</li>
+                        <li>Crafted dynamic live dashboards and automated various processes.</li>
+                        <li>Optimized databases and participated in weekly agile team meetings.</li>
+                        <li>Created comprehensive documentation for various applications.</li>
                       </ul>
                     </p>
                   </div>
@@ -66,94 +80,6 @@ const Projects = () => {
               </Fade>
             </Col>
           </Row>
-        </div>
-      </Container>
-      <Container>
-        <div className="project-wrapper">
-          <Title title="Projects" />
-          {projects.map((project) => {
-            const { title, info, info2, url, repo, img, id } = project;
-
-            return (
-              <Row key={id}>
-                <Col lg={4} sm={12}>
-                  <Fade
-                    left={isDesktop}
-                    bottom={isMobile}
-                    duration={1000}
-                    delay={500}
-                    distance="30px"
-                  >
-                    <div className="project-wrapper__text">
-                      <h3 className="project-wrapper__text-title">{title || 'Project Title'}</h3>
-                      <div>
-                        <p>
-                          {info ||
-                            'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
-                        </p>
-                        <p className="mb-4">{info2 || ''}</p>
-                      </div>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cta-btn cta-btn--hero"
-                        href={url || '#!'}
-                      >
-                        See Live
-                      </a>
-
-                      {repo && (
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="cta-btn text-color-main"
-                          href={repo}
-                        >
-                          Source Code
-                        </a>
-                      )}
-                    </div>
-                  </Fade>
-                </Col>
-                <Col lg={8} sm={12}>
-                  <Fade
-                    right={isDesktop}
-                    bottom={isMobile}
-                    duration={1000}
-                    delay={1000}
-                    distance="30px"
-                  >
-                    <div className="project-wrapper__image">
-                      <a
-                        href={url || '#!'}
-                        target="_blank"
-                        aria-label="Project Link"
-                        rel="noopener noreferrer"
-                      >
-                        <Tilt
-                          options={{
-                            reverse: false,
-                            max: 8,
-                            perspective: 1000,
-                            scale: 1,
-                            speed: 300,
-                            transition: true,
-                            axis: null,
-                            reset: true,
-                            easing: 'cubic-bezier(.03,.98,.52,.99)',
-                          }}
-                        >
-                          <div data-tilt className="thumbnail rounded">
-                            <ProjectImg alt={title} filename={img} />
-                          </div>
-                        </Tilt>
-                      </a>
-                    </div>
-                  </Fade>
-                </Col>
-              </Row>
-            );
-          })}
         </div>
       </Container>
     </section>
