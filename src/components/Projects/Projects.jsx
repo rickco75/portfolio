@@ -78,6 +78,10 @@ const Projects = () => {
                     </ul>
                   </div>
                   {[
+                    'Manged various teams of developers and led daily standups.',
+                    'Ensured excellent code quality avoiding tech debt.',
+                    'Utilized SCRUM and other agile project management.',
+                    'Maintained excellent communication between all teams and stakeholders',
                     'Extensive experience with large and complex distributed architectures.',
                     'Managed multiple microservices and used Apollo Federation.',
                     'Created dashboards with New Relic and wrote unit tests with Mocha.',
@@ -85,7 +89,7 @@ const Projects = () => {
                     'Actively participated in daily standup meetings and sprint planning.',
                     'Optimized GraphQL queries and mutations for lowest possible latency.',
                     'Performed load testing using K6 and created detailed documentation in Confluence.',
-                    'Worked with Kafka as a message broker between microservices.',
+                    'Worked with Kafka and various other message brokers to communicate between different distributed microservices.',
                     'Utilized multiple databases including MongoDB, MS SQL Server, and Postgres.',
                     'Implemented serverless functionality with AWS Amplify, AppSync, DynamoDB, Cognito, and Lambdas.',
                     'Developed and maintained a GraphQL API using Node.js and Apollo Server.',
@@ -96,7 +100,7 @@ const Projects = () => {
                     'Managed significant MSSQL databases and migrated legacy applications to React.',
                     'Crafted dynamic live dashboards and automated various processes.',
                     'Optimized databases and participated in weekly agile team meetings.',
-                    'Created comprehensive documentation for various applications.'
+                    'Created comprehensive documentation for all aspects of the Software Development Lifecycle and company architecture.'
                   ].map((description, index) => (
                     <Fade key={index} left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
                       <Row style={descriptionRowStyle(index)}>
