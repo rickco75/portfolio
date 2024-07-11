@@ -26,7 +26,7 @@ const About = () => {
   return (
     <section id="about">
       <Container>
-        <Title title="Rick Cohen Fullstack Developer" />
+        <Title title="Rick Cohen Software Engineer" />
         <Row className="about-wrapper">
           <Col md={6} sm={12}>
             <Fade bottom duration={1000} delay={600} distance="30px">
