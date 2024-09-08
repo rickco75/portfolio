@@ -17,21 +17,40 @@ const Projects = () => {
     }
   }, []);
 
-  const skillsStyle = {
-    padding: '0 20px',
-    marginBottom: '20px',
-    fontSize: '16px',
-    lineHeight: '1.6',
-    color: '#333',
+  const sectionTitleStyle = {
+    fontSize: '20px',
+    fontWeight: 'bold',
+    marginBottom: '10px',
   };
 
-  const skillsListStyle = {
-    paddingLeft: '20px',
-    listStyleType: 'disc',
+  const skillsContainerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '15px',
+    fontSize: '16px',
+  };
+
+  const skillsBlockStyle = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '10px',
+    backgroundColor: '#f5f5f5',
+    padding: '10px',
+    borderRadius: '8px',
+    border: '1px solid #ddd',
+  };
+
+  const skillsItemStyle = {
+    padding: '5px 10px',
+    borderRadius: '5px',
+    backgroundColor: '#e0f7fa',
+    color: '#00796b',
+    fontWeight: 'bold',
+    whiteSpace: 'nowrap',
   };
 
   const descriptionRowStyle = (index) => ({
-    backgroundColor: index % 2 === 0 ? '#e6f7ff' : '#fff3e6',  // Vibrant alternating colors
+    backgroundColor: index % 2 === 0 ? '#e6f7ff' : '#fff3e6',
     padding: '10px 20px',
     marginBottom: '10px',
     borderRadius: '5px',
@@ -44,6 +63,16 @@ const Projects = () => {
     color: '#333',
   };
 
+  const workSummaries = [
+    'Led the development of Mastery Logistics Systems’ Transportation Management System, managing microservices with Apollo Federation and Kafka.',
+    'Developed scalable GraphQL APIs using Node.js and Apollo Server at 4th Down Solutions, integrating AWS services and PostgreSQL.',
+    'Mentored students at Woz-U, helping them master web technologies.',
+    'Streamlined web applications and internal systems for C&H Construction, leading a small development team.',
+    'Migrated legacy ColdFusion applications to React at Lipsey Logistics and optimized database systems for improved performance.',
+    'Spearheaded eCommerce growth through development and optimization efforts at Visiture.',
+    'Contributed to ColdFusion projects and database operations at UPS Corporate Headquarters, improving application performance.'
+  ];
+
   return (
     <section id="projects">
       <Container>
@@ -52,67 +81,101 @@ const Projects = () => {
           <Row>
             <Col lg={12} sm={12}>
               <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
-                <div className="project-wrapper__text">
-                  <div style={skillsStyle}>
-                    <ul style={skillsListStyle}>
-                      <li>TypeScript</li>
-                      <li>Node.js</li>
-                      <li>React</li>
-                      <li>GraphQL</li>
-                      <li>MS SQL</li>
-                      <li>Postgres</li>
-                      <li>MongoDB</li>
-                      <li>HTML & CSS</li>
-                      <li>SQLite</li>
-                      <li>DynamoDB</li>
-                      <li>MySQL</li>
-                      <li>AWS - Amplify, AppSync</li>
-                      <li>Wrike</li>
-                      <li>Git, GitLab</li>
-                      <li>Visual Studio Code</li>
-                      <li>Agile Project Management</li>
-                      <li>ORM - Objection, Prisma, TypeORM</li>
-                      <li>Mocha, Jest, Cypress</li>
-                      <li>New Relic</li>
-                      <li>Apollo Server, Apollo Federation</li>
-                      <li>Docker</li>
-                    </ul>
+                <div style={skillsContainerStyle}>
+                  <div>
+                    <div style={sectionTitleStyle}>Programming Languages & Frameworks:</div>
+                    <div style={skillsBlockStyle}>
+                      <span style={skillsItemStyle}>TypeScript</span>
+                      <span style={skillsItemStyle}>React</span>
+                      <span style={skillsItemStyle}>GraphQL</span>
+                      <span style={skillsItemStyle}>ColdFusion</span>
+                      <span style={skillsItemStyle}>HTML</span>
+                      <span style={skillsItemStyle}>CSS</span>
+                    </div>
                   </div>
-                  {[
-                    'Managed various teams of developers and led daily standups.',
-                    'Ensured excellent code quality avoiding tech debt.',
-                    'Utilized SCRUM and other agile project management.',
-                    'Maintained excellent communication between all teams and stakeholders.',
-                    'Extensive experience with large and complex distributed architectures.',
-                    'Managed multiple microservices and used Apollo Federation.',
-                    'Created dashboards with New Relic and wrote unit tests with Mocha.',
-                    'Wrote E2E tests using Cypress for front-end applications.',
-                    'Actively participated in daily standup meetings and sprint planning.',
-                    'Optimized GraphQL queries and mutations for lowest possible latency.',
-                    'Performed load testing using K6 and created detailed documentation in Confluence.',
-                    'Worked with Kafka and various other message brokers to communicate between different distributed microservices.',
-                    'Utilized multiple databases including MongoDB, MS SQL Server, and Postgres.',
-                    'Implemented serverless functionality with AWS Amplify, AppSync, DynamoDB, Cognito, and Lambdas.',
-                    'Developed and maintained a GraphQL API using Node.js and Apollo Server.',
-                    'Managed PostgreSQL databases and implemented Role-Based Access Control (RBAC).',
-                    'Integrated frontend with PostgreSQL database through GraphQL API.',
-                    'Developed and maintained microservice architecture focusing on modularity and scalability.',
-                    'Influenced numerous students through teaching and mentorship at Woz-U.',
-                    'Managed significant MSSQL databases and migrated legacy applications to React.',
-                    'Crafted dynamic live dashboards and automated various processes.',
-                    'Optimized databases and participated in weekly agile team meetings.',
-                    'Created comprehensive documentation for all aspects of the Software Development Lifecycle and company architecture.',
-                  ].map((description, index) => (
-                    <Fade key={index} left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
-                      <Row style={descriptionRowStyle(index)}>
-                        <Col>
-                          <p style={descriptionTextStyle}>{description}</p>
-                        </Col>
-                      </Row>
-                    </Fade>
-                  ))}
+                  <div>
+                    <div style={sectionTitleStyle}>Databases:</div>
+                    <div style={skillsBlockStyle}>
+                      <span style={skillsItemStyle}>MS SQL</span>
+                      <span style={skillsItemStyle}>Postgres</span>
+                      <span style={skillsItemStyle}>MongoDB</span>
+                      <span style={skillsItemStyle}>SQLite</span>
+                      <span style={skillsItemStyle}>DynamoDB</span>
+                      <span style={skillsItemStyle}>MySQL</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div style={sectionTitleStyle}>Cloud & DevOps:</div>
+                    <div style={skillsBlockStyle}>
+                      <span style={skillsItemStyle}>AWS (Amplify, AppSync)</span>
+                      <span style={skillsItemStyle}>Docker</span>
+                      <span style={skillsItemStyle}>Kubernetes</span>
+                      <span style={skillsItemStyle}>AKC</span>
+                      <span style={skillsItemStyle}>Git / GitLab</span>
+                      <span style={skillsItemStyle}>Visual Studio Code</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div style={sectionTitleStyle}>Testing & Monitoring:</div>
+                    <div style={skillsBlockStyle}>
+                      <span style={skillsItemStyle}>Mocha</span>
+                      <span style={skillsItemStyle}>Jest</span>
+                      <span style={skillsItemStyle}>Cypress</span>
+                      <span style={skillsItemStyle}>K6</span>
+                      <span style={skillsItemStyle}>New Relic</span>
+                      <span style={skillsItemStyle}>Grafana</span>
+                      <span style={skillsItemStyle}>Lens</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div style={sectionTitleStyle}>Project Management & Collaboration:</div>
+                    <div style={skillsBlockStyle}>
+                      <span style={skillsItemStyle}>Agile Project Management</span>
+                      <span style={skillsItemStyle}>Wrike</span>
+                      <span style={skillsItemStyle}>JIRA (JQL)</span>
+                      <span style={skillsItemStyle}>Confluence</span>
+                      <span style={skillsItemStyle}>PagerDuty</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div style={sectionTitleStyle}>APIs & Back-End Technologies:</div>
+                    <div style={skillsBlockStyle}>
+                      <span style={skillsItemStyle}>Apollo Server</span>
+                      <span style={skillsItemStyle}>Apollo Federation</span>
+                      <span style={skillsItemStyle}>Kafka</span>
+                      <span style={skillsItemStyle}>Node.js</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div style={sectionTitleStyle}>Feature Management:</div>
+                    <div style={skillsBlockStyle}>
+                      <span style={skillsItemStyle}>LaunchDarkly (Feature Flags)</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div style={sectionTitleStyle}>ORM:</div>
+                    <div style={skillsBlockStyle}>
+                      <span style={skillsItemStyle}>Objection</span>
+                      <span style={skillsItemStyle}>Prisma</span>
+                      <span style={skillsItemStyle}>TypeORM</span>
+                    </div>
+                  </div>
                 </div>
               </Fade>
+            </Col>
+          </Row>
+          <Title title="Work History Summary" />
+          <Row>
+            <Col lg={12} sm={12}>
+              {workSummaries.map((summary, index) => (
+                <Fade key={index} left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
+                  <Row style={descriptionRowStyle(index)}>
+                    <Col>
+                      <p style={descriptionTextStyle}>{summary}</p>
+                    </Col>
+                  </Row>
+                </Fade>
+              ))}
             </Col>
           </Row>
         </div>
